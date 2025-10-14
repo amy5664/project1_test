@@ -303,3 +303,85 @@ ul {
     color: #0056b3;            /* hover 시 진한 파랑 */
     text-decoration: underline; /* 마우스 올리면 밑줄 */
 }
+
+/* 상단 페이지 헤더 */
+.page-header{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;margin-bottom:18px
+}
+.page-title h2{
+  margin:0;font-size:24px;line-height:1.2
+}
+.page-sub{
+  margin-top:6px;color:#6b7280;font-size:14px
+}
+
+/* 섹션 타이틀(파란 밑줄 유지) */
+.section-title{
+  font-size:18px;margin:10px 0 8px 0
+}
+
+/* 버튼 스타일 일원화 */
+.btn{display:inline-flex;align-items:center;gap:8px;
+  padding:10px 14px;border:1px solid #d0d4da;border-radius:10px;
+  background:#fff;color:#111827;font-weight:600;text-decoration:none;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);transition:.15s ease
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.btn:active{transform:none;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.btn-lg{padding:12px 18px;border-radius:12px}
+.btn-primary{background:#007bff;color:#fff;border-color:#007bff}
+.btn-primary:hover{filter:brightness(.96)}
+.btn-primary:focus{outline:3px solid rgba(0,123,255,.25)}
+
+/* 버튼 아이콘 */
+.btn-icon{font-size:18px;line-height:1;}
+
+/* 반응형: 좁은 화면에서 버튼이 아래로 떨어지도록 */
+@media (max-width: 640px){
+  .page-header{flex-direction:column;align-items:flex-start}
+  .btn-lg{width:100%;justify-content:center}
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.inline-form {
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+/* 파란색 버튼 (수정/목록) */
+.btn.blue {
+  background-color: #1677ff;
+}
+.btn.blue:hover {
+  background-color: #125ed4;
+}
+
+/* 빨간색 버튼 (삭제) */
+.btn.red {
+  background-color: #e74c3c;
+}
+.btn.red:hover {
+  background-color: #c0392b;
+}
+
+
+

@@ -4,7 +4,7 @@
 <mapper namespace="com.lgy.Product_sales_platform.dao.mapper.UserDAO">
 
     <!-- resultMap: DB 컬럼 → UserDto 필드 매핑 -->
-    <resultMap id="UserMap" type="com.lgy.Product_sales_platform.dto.UserDto">
+    <resultMap id="UserMap" type="com.lgy.Product_sales_platform.dto.UserDTO">
         <result column="MEMBER_ID" property="memberId"/>
         <result column="MEMBER_PW" property="memberPw"/>
         <result column="MEMBER_NAME" property="memberName"/>
