@@ -17,7 +17,7 @@
 			<nav>
 				<ul>
 					<li class="sidebar-title">판매자 마이페이지</li>
-					<li><a href="${pageContext.request.contextPath}/seller/mypage" class="active">상품 관리</a></li>
+					<li><a href="${pageContext.request.contextPath}/seller/seller/products" class="active">상품 관리</a></li>
 					<li><a href="${pageContext.request.contextPath}/seller/members">회원 관리</a></li>
 					<li><a href="#notice-board">공지사항</a></li>
 				</ul>
@@ -27,60 +27,67 @@
 		<section class="mypage-content-area">
 
 			<!-- 상품 관리 -->
-			<div id="product-management-content" class="content-panel active">
-				<h2>상품 관리</h2>
+<!-- 			<div id="product-management-content" class="content-panel active"> -->
+<!-- 				<h2>상품 관리</h2> -->
 
-				<section class="product-registration">
-					<h3>신규 상품 등록</h3>
-					<form action="#" method="post" class="product-form">
-						<div>
-							<label for="prod_name">상품명</label><br /> <input type="text"
-								id="prod_name" name="prod_name" required />
-						</div>
-						<div>
-							<label for="prod_price">가격 (원)</label><br /> <input type="text"
-								id="prod_price" name="prod_price" required pattern="\\d+"
-								title="숫자만 입력하세요" />
-						</div>
-						<div>
-							<label for="prod_desc">상품 설명</label><br />
-							<textarea id="prod_desc" name="prod_desc" rows="4"
-								maxlength="4000"></textarea>
-						</div>
-						<div>
-							<button type="submit">상품 등록</button>
-							<button type="reset">초기화</button>
-						</div>
-					</form>
-				</section>
+<!-- 				<section class="product-registration"> -->
+<!-- 					<h3>신규 상품 등록</h3> -->
+<%-- 					<form action="${pageContext.request.contextPath}/seller/products" method="post" accept-charset="UTF-8" class="product-form"> --%>
+<!-- 						<div> -->
+<!-- 							<label for="prod_name">상품명</label><br />  -->
+<!-- 							<input type="text" id="prod_name" name="prodName" required /> -->
+<!-- 						</div> -->
+<!-- 						<div> -->
+<!-- 							<label for="prod_price">가격 (원)</label><br />  -->
+<!-- 							<input type="number" id="prod_price" name="prodPrice" required pattern="[0-9]+" -->
+<!-- 								title="숫자만 입력하세요" /> -->
+<!-- 						</div> -->
+<!-- 						<div> -->
+<!-- 							<label for="prod_stock">재고</label><br />  -->
+<!-- 							<input type="number" id="prod_stock" name="prodStock" required pattern="[0-9]+" -->
+<!-- 								title="숫자만 입력하세요" /> -->
+<!-- 						</div> -->
+<!-- 						<div> -->
+<!-- 							<label for="prod_desc">상품 설명</label><br /> -->
+<!-- 							<textarea id="prod_desc" name="prod_desc" rows="4" maxlength="4000"></textarea> -->
+<!-- 						</div> -->
+						
+<!-- 						    판매자 ID는 세션에서 세팅하는 편이 안전합니다. 없다면 임시 hidden -->
+<!--     					<input type="hidden" name="prodSeller" value="${loginSellerId}"> -->
+<!-- 						<div> -->
+<!-- 							<button type="submit">상품 등록</button> -->
+<!-- 							<button type="reset">초기화</button> -->
+<!-- 						</div> -->
+<!-- 					</form> -->
+<!-- 				</section> -->
 
-				<hr />
+<!-- 				<hr /> -->
 
-				<!-- 상품 목록 (DB 연동 후 JSTL로 반복 예정) -->
-				<table>
-					<thead>
-						<tr>
-							<th>상품명</th>
-							<th>가격</th>
-							<th>재고</th>
-							<th>등록일</th>
-							<th>관리</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>여름 반팔 티셔츠</td>
-							<td>19,000원</td>
-							<td>120</td>
-							<td>2025-10-01</td>
-							<td>
-								<button>수정</button>
-								<button>삭제</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+<!-- 				상품 목록 (DB 연동 후 JSTL로 반복 예정) -->
+<!-- 				<table> -->
+<!-- 					<thead> -->
+<!-- 						<tr> -->
+<!-- 							<th>상품명</th> -->
+<!-- 							<th>가격</th> -->
+<!-- 							<th>재고</th> -->
+<!-- 							<th>등록일</th> -->
+<!-- 							<th>관리</th> -->
+<!-- 						</tr> -->
+<!-- 					</thead> -->
+<!-- 					<tbody> -->
+<!-- 						<tr> -->
+<!-- 							<td>여름 반팔 티셔츠</td> -->
+<!-- 							<td>19,000원</td> -->
+<!-- 							<td>120</td> -->
+<!-- 							<td>2025-10-01</td> -->
+<!-- 							<td> -->
+<!-- 								<button>수정</button> -->
+<!-- 								<button>삭제</button> -->
+<!-- 							</td> -->
+<!-- 						</tr> -->
+<!-- 					</tbody> -->
+<!-- 				</table> -->
+<!-- 			</div> -->
 
 <!-- 			<!-- 회원 관리 --> -->
 <!-- 			<div id="member-management-content" class="content-panel"> -->
