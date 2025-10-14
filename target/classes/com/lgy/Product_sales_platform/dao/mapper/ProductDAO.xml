@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgy.Product_sales_platform.dao.mapper.ProductDAO">
+
+    <!-- resultMap: DB 컬럼 → UserDto 필드 매핑 -->
+    <resultMap id="ProductMap" type="com.lgy.Product_sales_platform.dto.ProductMap">
+        <result column="PROD_ID" property="prodId"/>
+        <result column="PROD_SELLER" property="prodSeller"/>
+        <result column="PROD_NAME" property="prodName"/>
+        <result column="PROD_PRICE" property="prodPrice"/>
+        <result column="PROD_STOCK" property="prodStock"/>
+        <result column="PROD_DESC" property="prodDesc"/>
+        <result column="PROD_CODE" property="prodCode"/>
+        <result column="PROD_REG" property="prodReg"/>
+        <result column="PROD_UPD" property="prodUpd"/>
+    </resultMap>
+
+    <!-- 목록 -->
+    <select id="getProductList" resultMap="ProductMap">
+         SELECT PROD_ID, PROD_SELLER, PROD_NAME, PROD_PRICE, PROD_STOCK,
+               PROD_DESC, PROD_CODE, PROD_REG, PROD_UPD
+          FROM PRODUCT_DB
+         ORDER BY PROD_ID DESC
+    </select>
+
+     <!-- 상세 -->
+    <select id="getProduct" parameterType="long" resultMap="ProductMap">
+        SELECT PROD_ID, PROD_SELLER, PROD_NAME, PROD_PRICE, PROD_STOCK,
+               PROD_DESC, PROD_CODE, PROD_REG, PROD_UPD
+          FROM PRODUCT_DB
+         WHERE PROD_ID = #{prodId}
+    </select>
+
+</mapper>

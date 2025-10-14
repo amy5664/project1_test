@@ -1,0 +1,305 @@
+@charset "EUC-KR";
+/* 기본 스타일 초기화 및 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    background-color: #f4f5f7;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 1. 헤더 스타일 */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0 0; /* 아래쪽 padding을 0으로 줄여 카테고리와의 간격 조정 */
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* 수직 배치 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    padding: 0 20px;
+}
+
+.logo {
+    margin-bottom: 15px; /* 로고와 카테고리 사이 간격 */
+    padding-bottom: 5px;
+}
+
+.logo a {
+    font-size: 26px;
+    font-weight: 700;
+    color: #007bff;
+}
+
+.categories {
+    width: 100%; /* 전체 너비 차지 */
+    border-top: 1px solid #eee; /* 구분선 */
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.categories ul {
+    display: flex;
+    gap: 30px;
+}
+
+.categories a {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+.categories a:hover {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+/* 2. 마이페이지 메인 영역 스타일 */
+.mypage-body {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* 왼쪽 사이드바 */
+.mypage-sidebar {
+    flex-shrink: 0;
+    width: 180px;
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mypage-sidebar a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 15px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.mypage-sidebar a:hover {
+    background-color: #f0f0f0;
+}
+
+/* 현재 선택된 메뉴 강조 */
+.mypage-sidebar a.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+}
+
+/* 오른쪽 콘텐츠 영역 */
+.mypage-content-area {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mypage-content-area h2 {
+    font-size: 24px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* 콘텐츠 패널 - 기본 숨김 */
+.content-panel {
+    display: none;
+}
+
+/* 활성화된 콘텐츠 */
+.content-panel.active {
+    display: block;
+}
+
+/* --- 회원 정보 폼 전용 스타일 --- */
+.info-form {
+    max-width: 600px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* 기본 입력 필드 스타일 */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    margin-top: 5px; /* 주소 필드 간격 확보 */
+}
+
+/* 수정 불가능한 아이디 필드 스타일 */
+#MEMBER_ID {
+    background-color: #eee;
+    color: #777;
+}
+
+/* --- 주소 그룹 전용 스타일 --- */
+.address-group input {
+    margin-bottom: 10px;
+}
+
+.address-zip-row {
+    display: flex;
+    gap: 10px; /* 우편번호 필드와 버튼 사이 간격 */
+    margin-bottom: 10px;
+}
+
+.address-search-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #6c757d; /* 회색 버튼 */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    flex-shrink: 0; /* 버튼 크기 유지 */
+    transition: background-color 0.3s;
+}
+
+.address-search-btn:hover {
+    background-color: #5a6268;
+}
+
+/* 수정 불가능한 주소 필드 스타일 */
+#zipcode,
+#MEMBER_ADDR_PRIMARY {
+    background-color: #eee;
+    color: #777;
+}
+/* --- 주소 그룹 전용 스타일 끝 --- */
+
+.password-link-group {
+    margin: 25px 0;
+    text-align: right;
+}
+
+.password-change-link {
+    color: #007bff;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-btn,
+.reset-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.reset-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.reset-btn:hover {
+    background-color: #bbb;
+}
+
+/* 테이블 전체 정렬 */
+.mypage-content-area table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;           /* 제목 파란줄과 간격 */
+    text-align: center;         /* 모든 칸 가운데 정렬 */
+}
+
+/* 헤더 스타일 (아이디, 이름, 이메일 등) */
+.mypage-content-area table thead th {
+    border-bottom: 2px solid #007bff;  /* 파란 줄 */
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 데이터 셀 스타일 */
+.mypage-content-area table tbody td {
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 15px;
+    color: #555;
+}
+
+/* 보기 링크를 버튼처럼 강조 */
+.mypage-content-area table tbody td a {
+    font-weight: 700;          /* 두껍게 */
+    color: #007bff;            /* 파란색 글자 */
+    text-decoration: none;     /* 밑줄 제거 */
+    transition: color 0.2s;
+}
+
+.mypage-content-area table tbody td a:hover {
+    color: #0056b3;            /* hover 시 진한 파랑 */
+    text-decoration: underline; /* 마우스 올리면 밑줄 */
+}
