@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,7 +19,7 @@
           <li class="sidebar-title">판매자 마이페이지</li>
           <li><a href="${pageContext.request.contextPath}/seller/products" class="active">상품 관리</a></li>
           <li><a href="${pageContext.request.contextPath}/seller/members">회원 관리</a></li>
-          <li><a href="#">공지사항</a></li>
+          <li><a href="${pageContext.request.contextPath}/seller/notices" class="active">공지사항</a></li>
         </ul>
       </nav>
     </aside>

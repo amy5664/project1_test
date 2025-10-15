@@ -114,34 +114,34 @@
 <!-- 			</div> -->
 
 			<!-- 공지사항 -->
-			<div id="notice-board-content" class="content-panel">
-				<h2>공지사항</h2>
-				<ul>
-					<li><a href="#">[중요] 추석 연휴 배송 안내</a> <span>2025-09-20</span></li>
-					<li><a href="#">[공지] 신규 카테고리 오픈</a> <span>2025-09-10</span></li>
-				</ul>
-				<hr />
-				<section class="notice-write">
-					<h3>공지사항 글쓰기</h3>
-					<form action="#" method="post" class="notice-form">
-						<div>
-							<label for="notice_title">제목</label><br /> <input type="text"
-								id="notice_title" name="notice_title" required />
-						</div>
-						<div>
-							<label for="notice_content">내용</label><br />
-							<textarea id="notice_content" name="notice_content" rows="6"
-								required></textarea>
-						</div>
-						<div>
-							<button type="submit">등록</button>
-							<button type="reset">초기화</button>
-						</div>
-					</form>
-				</section>
-			</div>
-		</section>
-	</main>
+<!-- 			<div id="notice-board-content" class="content-panel"> -->
+<!-- 				<h2>공지사항</h2> -->
+<!-- 				<ul> -->
+<!-- 					<li><a href="#">[중요] 추석 연휴 배송 안내</a> <span>2025-09-20</span></li> -->
+<!-- 					<li><a href="#">[공지] 신규 카테고리 오픈</a> <span>2025-09-10</span></li> -->
+<!-- 				</ul> -->
+<!-- 				<hr /> -->
+<!-- 				<section class="notice-write"> -->
+<!-- 					<h3>공지사항 글쓰기</h3> -->
+<!-- 					<form action="#" method="post" class="notice-form"> -->
+<!-- 						<div> -->
+<!-- 							<label for="notice_title">제목</label><br /> <input type="text" -->
+<!-- 								id="notice_title" name="notice_title" required /> -->
+<!-- 						</div> -->
+<!-- 						<div> -->
+<!-- 							<label for="notice_content">내용</label><br /> -->
+<!-- 							<textarea id="notice_content" name="notice_content" rows="6" -->
+<!-- 								required></textarea> -->
+<!-- 						</div> -->
+<!-- 						<div> -->
+<!-- 							<button type="submit">등록</button> -->
+<!-- 							<button type="reset">초기화</button> -->
+<!-- 						</div> -->
+<!-- 					</form> -->
+<!-- 				</section> -->
+<!-- 			</div> -->
+<!-- 		</section> -->
+<!-- 	</main> -->
 
 	<!-- 공통 footer include -->
 <jsp:include page="/WEB-INF/views/fragments/footer.jsp" />

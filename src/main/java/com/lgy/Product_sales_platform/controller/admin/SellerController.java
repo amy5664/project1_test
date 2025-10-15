@@ -33,6 +33,7 @@ public class SellerController {
 	public String productList(@RequestParam(value = "created", required = false) Long createdId, Model model) {
 		model.addAttribute("products", productDAO.getProductList());
 		model.addAttribute("createdId", createdId); // 등록 성공 배너
+		model.addAttribute("activeMenu", "product");
 		return "seller/products"; // /WEB-INF/views/seller/products.jsp
 	}
 	
@@ -56,6 +57,7 @@ public class SellerController {
 		public String productDetail(@PathVariable("prodId") Long prodId, Model model) {
 			ProductDTO product = productDAO.getProduct(prodId);
 			model.addAttribute("product", product);
+			model.addAttribute("activeMenu", "product");
 			return "seller/productDetail"; // /WEB-INF/views/seller/productDetail.jsp
 		}
 	
@@ -67,6 +69,7 @@ public class SellerController {
 			return "redirect:/seller/products?error=notfound";
 		}
 		model.addAttribute("product", p);
+		model.addAttribute("activeMenu", "product");
 		return "seller/product_edit";
 	}
 	
@@ -103,6 +106,7 @@ public class SellerController {
 	@GetMapping("/seller/members")
 	public String memberList(Model model) {
 		model.addAttribute("users", userDAO.getUserList());
+		model.addAttribute("activeMenu", "member");
 		return "seller/members"; // /WEB-INF/views/seller/members.jsp
 	}
 
@@ -111,6 +115,7 @@ public class SellerController {
 	public String memberDetail(@PathVariable("memberId") String memberId ,Model model) {
 		UserDTO user = userDAO.getUser(memberId);
 	    model.addAttribute("user", user);
+	    model.addAttribute("activeMenu", "member");
 		// TODO: 이후 구매내역 orders도 같이 model에 넣을 예정
 		return "seller/memberDetail"; // /WEB-INF/views/seller/memberDetail.jsp
 	}
