@@ -39,8 +39,8 @@
           <input type="number" name="prodStock" value="${product.prodStock}" required min="0" step="1" />
         </div>
         <div class="form-group">
-          <label>코드(선택)</label>
-          <input type="text" name="prodCode" value="${product.prodCode}" />
+          <label>상품 코드</label>
+          <input type="text" value="${product.prodCode}" readonly />
         </div>
         <div class="form-group">
           <label>상품 설명</label>

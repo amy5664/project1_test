@@ -11,7 +11,7 @@ public class ProductDTO {
 	private Integer prodPrice; //상품 가격
 	private Integer prodStock; //재고 수량
 	private String prodDesc; // 상품 설명
-    private String prodCode; //상품 코드
+    private Long prodCode; //상품 코드
     private Date   prodReg; //등록일
     private Date   prodUpd; //수정일
 }

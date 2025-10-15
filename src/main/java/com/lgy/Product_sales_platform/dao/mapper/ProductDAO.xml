@@ -43,7 +43,8 @@
 <!-- 	등록 (PROD_ID: 시퀀스 사용) -->
 	<insert id="insertProduct"
 		parameterType="com.lgy.Product_sales_platform.dto.ProductDTO">
-		
+	
+	<!-- PROD_ID 선발급 -->	
 	<selectKey keyProperty="prodId" resultType="long" order="BEFORE">
 		SELECT PRODUCT_SEQ.NEXTVAL FROM DUAL
 	</selectKey>
@@ -58,10 +59,14 @@
 		#{prodPrice}, 
 		#{prodStock},
 		#{prodDesc,  jdbcType=VARCHAR},
-    	#{prodCode,  jdbcType=VARCHAR},
+    	SEQ_PROD_CODE.NEXTVAL,
     	NVL(#{prodReg, jdbcType=TIMESTAMP}, SYSDATE)
 		)
 	</insert>
+	
+	<select id="getProdCodeById" parameterType="long" resultType="long">
+  SELECT PROD_CODE FROM PRODUCT_DB WHERE PROD_ID = #{prodId}
+</select>
 
 	<!-- 수정 (수정일 자동 반영) -->
 	<update id="updateProduct"
@@ -73,9 +78,7 @@
 		PROD_STOCK =
 		#{prodStock},
 		PROD_DESC = #{prodDesc},
-		PROD_CODE = #{prodCode},
-		PROD_UPD
-		= SYSDATE
+		PROD_UPD = SYSDATE
 		WHERE PROD_ID = #{prodId}
 	</update>
 

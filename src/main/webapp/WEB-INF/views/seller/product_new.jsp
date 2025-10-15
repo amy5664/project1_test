@@ -37,10 +37,10 @@
           <label for="prod_stock">재고</label>
           <input type="number" id="prod_stock" name="prodStock" required min="0" step="1" />
         </div>
-        <div class="form-group">
-          <label for="prod_code">코드(선택)</label>
-          <input type="text" id="prod_code" name="prodCode" />
-        </div>
+		<div class="form-group">
+			<label for="prod_code">상품 코드</label>
+			<p class="hint">상품 코드는 등록 시 자동 부여됩니다.</p>
+		</div>
         <div class="form-group">
           <label for="prod_desc">상품 설명</label>
           <textarea id="prod_desc" name="prodDesc" rows="4" maxlength="4000"></textarea>
